@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><title>JSDoc</title><link href="css/styles.css" rel="stylesheet"><script data-main="js/presentation" src="js/requirejs/require.js"></script></head><body><form class="go-to-page" action="/select/slide" method="post"><fieldset><input type="text" maxlength="3" value="" placeholder="1"></fieldset></form><section class="progress"><div class="value"></div></section><section class="dark" id="slides"><article class="think think--types cloud center cover"><h1><p class="wrapper">How to document my code?</p></h1><div class="subtitle"><p>— Use JSDoc!</p></div></article><article class="center qrcode var-6"><div class="wrapper"><div class="half"><h2>JSDoc</h2></div><div class="half"><img src="images/jsdoc.svg" alt="QRCODE with link to jsdoc"></div><p><a href="http://usejsdoc.org/" data-click>http://usejsdoc.org/</a></p></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">/**
+ * Cities - Class to work with unique cities
+ * @class
+ * @namespace
+ */
+class Cities {
+  /**
+   * @type {array} - list of the cities
+   * @static
+   */
+  static collector = [];
+}
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">/**
+ * Class to work with unique cities
+ */
+class Cities {
+  /**
+   * List of the cities
+   */
+  static collector = [];
+}
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="javascript">/**
+ * Get city by index
+ * @throws {Error} if index not found
+ * @param {number} index city index
+ * @return {string} city name
+ */
+getCity(index) {
+  // …
+}
+</code></pre></div></article><article class="think think--types cloud center"><h1><p class="wrapper">What does this do?</p></h1><div class="subtitle"><p>— Nothing.</p></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm i -D jsdoc
+</code></pre></div></article><article class="center code-0"><div class="wrapper"><pre><code class="bash">// package.json
+"scripts": {
+  "doc": "jsdoc src/*.js -d docs"
+}</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm run doc</code></pre></div></article><article class="screen screen--jsdoc"></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm i -D jsdoc-babel</code></pre></div></article><article class="center code-0"><div class="wrapper"><pre><code class="json">// conf.json
+{
+  "plugins": ["node_modules/jsdoc-babel"]
+}</code></pre></div></article><article class="screen screen--documentation"></article><article class="center qrcode var-5"><div class="wrapper"><div class="half"><h2>Documentation.js</h2></div><div class="half"><img src="images/documentation.svg" alt="QRCODE with link to jsdoc"></div><p><a href="http://documentation.js.org/" data-click>http://documentation.js.org/</a></p></div></article><article class="center qrcode var-5"><div class="wrapper"><div class="half"><h2>Documentation.js and the state of syntax trees.</h2></div><div class="half"><img src="images/dtalk.svg" alt="QRCODE with link to the talk"></div><p><a href="https://www.youtube.com/watch?v=Gh_izRkLre0" data-click>https://bit.ly/2JPIQon</a></p></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm i -D documentation
+</code></pre></div></article><article class="center code-7"><div class="wrapper"><pre><code class="json">// package.json
+"scripts": {
+  "doc": "documentation
+    build src/*.js
+    -f html -o docs"
+}</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm run doc</code></pre></div></article><article class="screen screen--documentation-build"></article><article class="center code-7"><div class="wrapper"><pre><code class="md">// README.md
+# Cities
+Cool librarie that …
+
+# API</code></pre></div></article><article class="center code-7"><div class="wrapper"><pre><code class="json">// package.json
+"scripts": {
+  "readme": "documentation
+    readme src/*.js
+    --section=API"
+}</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm run readme</code></pre></div></article><article class="screen screen--documentation-readme"></article><article class="think think--real cloud center"><h1><p class="wrapper">If we have described types can we lint them?</p></h1><div class="subtitle"><p>— TS can read JSDoc.</p></div></article><article class="illustration illustration--vsc"></article><article class="screen screen--vsc-settings"></article><article class="screen screen--vsc-property"></article><article class="screen screen--vsc-check"></article><article class="center qrcode var-5"><div class="wrapper"><div class="half"><h2>Type Safe JavaScript with JSDoc</h2></div><div class="half"><img src="images/vs-jsdoc.svg" alt="QRCODE with link to article about configuring jsdoc type checks"></div><p><a href="https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76" data-click>https://goo.gl/sBHmmH</a></p></div></article><article class="illustration illustration--ws"></article><article class="screen screen--ws-lint-type"></article><article class="think think--real cloud center"><h1><p class="wrapper">But what about<b> REAL</b> linting?</p></h1><div class="subtitle"><p>— Yes we can!</p></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm i -D typescript
+</code></pre></div></article><article class="center code-3"><div class="wrapper"><pre><code class="json">// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+  },
+  "include": [
+    "src/**/*.js"
+  ]
+}
+</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="json">// package.json
+"scripts": {
+  "lint": "tsc"
+}</code></pre></div></article><article class="center code-0"><div class="wrapper"><pre><code class="javascript">/**
+ * add - Add new city
+ * @param {string} word city name
+ */
+add(word) {
+  //…
+}</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="javascript">citys.add(222);</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="bash">npm run lint</code></pre></div></article><article class="screen screen--tsc-lint"></article><article class="center code-2"><div class="wrapper"><pre><code class="js">// package.json
+{ // …
+  "scripts": { // …
+    "precommit": "lint-staged"
+  },
+  "lint-staged": { // …
+    "*.{js,jsx}": "tsc --target ESNext
+      --noEmit --allowJs --checkJs"
+  }
+}
+</code></pre></div></article><article class="screen screen--lint-staged-types"></article><article class="center qrcode var-5"><div class="wrapper"><div class="half"><h2>Repo with an example</h2></div><div class="half"><img src="images/linttyperepo.svg" alt="QRCODE with link to example repo"></div><p><a href="https://github.com/SilentImp/lintTypes" data-click>https://github.com/SilentImp/lintTypes</a></p></div></article><article class="contacts center qrcode"><div class="wrapper"><div class="about-speaker half"><p class="name">Anton Nemtsev</p><p class="link">http://silentimp.info/</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><div class="half"><img src="images/git.svg" alt="QRCODE with link to the talk"></div><p><a href="https://github.com/SilentImp/JSDocIntro" data-click>https://github.com/SilentImp/JSDocIntro</a></p></div></article></section></body></html>

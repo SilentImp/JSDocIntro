@@ -1,0 +1,301 @@
+extends ./partials/layout.jade
+
+block title
+    title JSDoc
+
+block slides
+
+  article.think.think--types.cloud.center.cover
+    h1
+      p.wrapper How to document my code?
+    .subtitle
+      p — Use JSDoc!
+
+  article.center.qrcode.var-6
+    .wrapper
+        .half
+            h2 JSDoc
+        .half
+            img(src="images/jsdoc.svg", alt="QRCODE with link to jsdoc")
+        p
+            a(href="http://usejsdoc.org/", data-click=true) http://usejsdoc.org/
+
+  article.center.code-2
+    .wrapper
+      pre
+        code.javascript.
+          /**
+           * Cities - Class to work with unique cities
+           * @class
+           * @namespace
+           */
+          class Cities {
+            /**
+             * @type {array} - list of the cities
+             * @static
+             */
+            static collector = [];
+          }
+
+  article.center.code-2
+    .wrapper
+      pre
+        code.javascript.
+          /**
+           * Class to work with unique cities
+           */
+          class Cities {
+            /**
+             * List of the cities
+             */
+            static collector = [];
+          }
+
+  article.center.code-2
+    .wrapper
+      pre
+        code.javascript.
+          /**
+           * Get city by index
+           * @throws {Error} if index not found
+           * @param {number} index city index
+           * @return {string} city name
+           */
+          getCity(index) {
+            // …
+          }
+
+  article.think.think--types.cloud.center
+    h1
+      p.wrapper What does this do?
+    .subtitle
+      p — Nothing.
+
+  article.center.code-9
+    .wrapper
+      pre
+        code.bash.
+          npm i -D jsdoc
+
+  article.center.code-0
+    .wrapper
+      pre
+        code.bash.
+          // package.json
+          "scripts": {
+            "doc": "jsdoc src/*.js -d docs"
+          }
+  article.center.code-9
+    .wrapper
+      pre
+        code.bash.
+          npm run doc
+  article.screen.screen--jsdoc
+  article.center.code-9
+    .wrapper
+      pre
+        code.bash.
+          npm i -D jsdoc-babel
+  article.center.code-0
+    .wrapper
+      pre
+        code.json.
+          // conf.json
+          {
+            "plugins": ["node_modules/jsdoc-babel"]
+          }
+  article.screen.screen--documentation
+  article.center.qrcode.var-5
+    .wrapper
+        .half
+            h2 Documentation.js
+        .half
+            img(src="images/documentation.svg", alt="QRCODE with link to jsdoc")
+        p
+            a(href="http://documentation.js.org/", data-click=true) http://documentation.js.org/
+
+  article.center.qrcode.var-5
+    .wrapper
+      .half
+          h2 Documentation.js and the state of syntax trees.
+      .half
+          img(src="images/dtalk.svg", alt="QRCODE with link to the talk")
+      p
+          a(href="https://www.youtube.com/watch?v=Gh_izRkLre0", data-click=true) https://bit.ly/2JPIQon
+
+
+  article.center.code-9
+    .wrapper
+      pre
+        code.bash.
+          npm i -D documentation
+
+  article.center.code-7
+    .wrapper
+      pre
+        code.json.
+          // package.json
+          "scripts": {
+            "doc": "documentation
+              build src/*.js
+              -f html -o docs"
+          }
+  article.center.code-9
+    .wrapper
+      pre
+        code.bash.
+          npm run doc
+  article.screen.screen--documentation-build
+  article.center.code-7
+    .wrapper
+      pre
+        code.md.
+          // README.md
+          # Cities
+          Cool librarie that …
+
+          # API
+  article.center.code-7
+    .wrapper
+      pre
+        code.json.
+          // package.json
+          "scripts": {
+            "readme": "documentation
+              readme src/*.js
+              --section=API"
+          }
+  article.center.code-9
+    .wrapper
+      pre
+        code.bash.
+          npm run readme
+  article.screen.screen--documentation-readme
+
+  article.think.think--real.cloud.center
+    h1
+      p.wrapper If we have described types can we lint them?
+    .subtitle
+      p — TS can read JSDoc.
+
+  article.illustration.illustration--vsc
+
+  article.screen.screen--vsc-settings
+
+  article.screen.screen--vsc-property
+
+  article.screen.screen--vsc-check
+
+  article.center.qrcode.var-5
+    .wrapper
+      .half
+          h2 Type Safe JavaScript with JSDoc
+      .half
+          img(src="images/vs-jsdoc.svg", alt="QRCODE with link to article about configuring jsdoc type checks")
+      p
+          a(href="https://medium.com/@trukrs/type-safe-javascript-with-jsdoc-7a2a63209b76", data-click=true) https://goo.gl/sBHmmH
+
+  article.illustration.illustration--ws
+
+  article.screen.screen--ws-lint-type
+
+  article.think.think--real.cloud.center
+    h1
+      p.wrapper But what about
+        b  REAL
+        |  linting?
+    .subtitle
+      p — Yes we can!
+
+  article.center.code-9
+    .wrapper
+      pre
+        code.bash.
+          npm i -D typescript
+
+  article.center.code-3
+    .wrapper
+      pre
+        code.json.
+          // tsconfig.json
+          {
+            "compilerOptions": {
+              "target": "ESNext",
+              "noEmit": true,
+              "allowJs": true,
+              "checkJs": true,
+            },
+            "include": [
+              "src/**/*.js"
+            ]
+          }
+
+  article.center.code-9
+    .wrapper
+      pre
+        code.json.
+          // package.json
+          "scripts": {
+            "lint": "tsc"
+          }
+  article.center.code-0
+    .wrapper
+      pre
+        code.javascript.
+          /**
+           * add - Add new city
+           * @param {string} word city name
+           */
+          add(word) {
+            //…
+          }
+  article.center.code-9
+    .wrapper
+      pre
+        code.javascript.
+          citys.add(222);
+  article.center.code-9
+    .wrapper
+      pre
+        code.bash.
+          npm run lint
+  article.screen.screen--tsc-lint
+
+  article.center.code-2
+    .wrapper
+      pre
+        code.js.
+          // package.json
+          { // …
+            "scripts": { // …
+              "precommit": "lint-staged"
+            },
+            "lint-staged": { // …
+              "*.{js,jsx}": "tsc --target ESNext
+                --noEmit --allowJs --checkJs"
+            }
+          }
+
+  article.screen.screen--lint-staged-types
+
+  article.center.qrcode.var-5
+    .wrapper
+      .half
+          h2 Repo with an example
+      .half
+          img(src="images/linttyperepo.svg", alt="QRCODE with link to example repo")
+      p
+          a(href="https://github.com/SilentImp/lintTypes", data-click=true) https://github.com/SilentImp/lintTypes
+
+  article.contacts.center.qrcode
+    .wrapper
+      .about-speaker.half
+        p.name Anton Nemtsev
+        p.link http://silentimp.info/
+        p.twitter @silentimp
+        p.email thesilentimp@gmail.com
+        p.skype skype: ravencry
+      .half
+        img(src="images/git.svg", alt="QRCODE with link to the talk")
+      p
+        a(href="https://github.com/SilentImp/JSDocIntro", data-click=true) https://github.com/SilentImp/JSDocIntro
