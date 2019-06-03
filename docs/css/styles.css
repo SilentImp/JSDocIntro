@@ -880,6 +880,23 @@ html body section#slides article iframe.half:last-child {
   font-style: normal;
 }
 
+.codekey {
+  font-size: 300px;
+  white-space: nowrap;
+}
+.rename {
+  font-size: 200px;
+}
+.rename del {
+  color: #f00;
+}
+.benefits h2 {
+  font-size: 64px;
+}
+.benefits li {
+  font-size: 52px;
+  line-height: 56px;
+}
 article.contacts {
   background-color: #fff;
 }
@@ -949,6 +966,12 @@ article.cloud.lazy--trendy h1 .wrapper {
   line-height: 72px;
   text-align: left;
   padding-left: 60px;
+}
+article.screen--story {
+  background-image: url("../images/story.png");
+}
+article.screen--fold {
+  background-image: url("../images/fold.png");
 }
 article.screen--stylelint-webpack {
   background-image: url("../images/stylelint-sebpack.png");
@@ -1439,6 +1462,11 @@ article.cloud.think h1:after {
 article.cloud.think--repo h1 .wrapper {
   font-size: 56px;
   line-height: 64px;
+}
+article.cloud.think--but h1 .wrapper {
+  text-align: center;
+  font-size: 100px;
+  line-height: 120px;
 }
 article.cloud.think--types h1 .wrapper {
   font-size: 64px;
